@@ -7,9 +7,9 @@ The archive contains 3 files:
 2) Another test file (csv)
 3) A metadata file (txt) describing the columns of the two csv files (identical for both)
 
-The [Jupyter notebook](census_income.ipynb) contains all the code along with explanatory comments. In summary, I have performed some EDA, cleaned the data, and created several models to predict whether or not someone earns greater than $50,000 per year.
+The [Jupyter notebook](census_income.ipynb) contains all the code along with explanatory comments. Please refer to this notebook for full details of my analysis. In summary, I have performed some EDA, cleaned the data, and created several models to predict whether or not someone earns greater than $50,000 per year.
 
-Initially, I tried Logistic regression, K-Nearest Neighbors, Random Forest, and XGBoost models on the cleaned data. Class imbalance was quite high so I applied SMOTE rebalancing and re-ran the models without seeing significant improvement; I was using the F1 score to tune the models which is a robust metric with imbalanced datasets.
+Initially, I tried Logistic Regression, K-Nearest Neighbors, Random Forest, and XGBoost models on the cleaned data. Class imbalance was quite high so I applied SMOTE rebalancing and re-ran the models without seeing significant improvement; I was using the F1 score to tune the models which is a robust metric with imbalanced datasets.
 
 Next, I applied Principle Component Analysis and determined that 10 components could capture 99.9% of the variance, so used these 10 features in new models. Performance did not improve for the Random Forest or XGBoost, which were already the highest-performing models, so I didn't feel it necessary to use PCA in the final model (training time significantly improved, however, so in a production setting if the models will be frequently retrained, PCA is probably a good idea).
 
